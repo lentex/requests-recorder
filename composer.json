@@ -1,0 +1,43 @@
+{
+    "name": "lentex/requests-recorder",
+    "description": "Laravel package that records every request to the application and saves it to DB",
+    "keywords": ["laravel", "package"],
+    "require": {
+        "php": ">=8.2",
+        "laravel/framework": "^9.48"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.22",
+        "spatie/ray": "^1.36",
+        "pestphp/pest-plugin-laravel": "^1.4",
+        "orchestra/testbench": "^7.19",
+        "laravel/pint": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lentex\\RequestsRecorder\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lentex\\RequestsRecorder\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "lint": "vendor/bin/pint -v --test",
+        "fix": "vendor/bin/pint -v"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+              "Lentex\\RequestsRecorder\\RequestsRecorderServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
